@@ -16,6 +16,6 @@ use App\Http\Controllers;
 Route::post("/register",[App\Http\Controllers\UserController::class,'register']);
 Route::post("/login","UserController@login");
 Route::get('/user','UserController@userInfo')->middleware('auth:api');
-Route::get('/home','IndexController@index');
+Route::get('/home/{ip}','IndexController@index');
 Route::post('/feedback','IndexController@create');
 Route::post('/insert','IndexController@addSkill');
