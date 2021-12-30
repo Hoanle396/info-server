@@ -16,9 +16,9 @@ class IndexController extends Controller
     public function index($ip){
         $skill=skill::all();
         $info=info::get()->first();
-         $load=new load();
-        $load->ip=$ip
-        $load->save();
+        $loads=new load();
+        $loads->ip=$ip
+        $loads->save();
         return response()->json(['skill'=>$skill,'info'=>$info]);
     }
     public function create(FeedbackRequest $request){
