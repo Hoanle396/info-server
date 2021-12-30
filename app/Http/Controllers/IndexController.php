@@ -8,7 +8,7 @@ use App\Mail\sendmail;
 use App\Models\Feedback;
 use App\Models\info;
 use App\Models\skill;
-use Illuminate\Http\Request;
+use App\Models\load;
 use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
@@ -16,6 +16,8 @@ class IndexController extends Controller
     public function index(){
         $skill=skill::all();
         $info=info::get()->first();
+         $load=new load();
+        $load->save();
         return response()->json(['skill'=>$skill,'info'=>$info]);
     }
     public function create(FeedbackRequest $request){
