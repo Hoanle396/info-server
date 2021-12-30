@@ -24,7 +24,7 @@ class IndexController extends Controller
        $feedback=new Feedback();
        $feedback->fill($request->all());
        $feedback->save();
-       Mail::to($request->email)->queue(new sendmail());
+//        Mail::to($request->email)->queue(new sendmail());
        return response()->json(['message'=>'phản hồi thành công']);
     }
     public function  addSkill(AddSkillRequest $request){
