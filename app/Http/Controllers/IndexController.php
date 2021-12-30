@@ -17,7 +17,7 @@ class IndexController extends Controller
         $skill=skill::all();
         $info=info::get()->first();
         $loads=new load();
-        $loads->ip=$ip
+        $loads->ip=$ip;
         $loads->save();
         return response()->json(['skill'=>$skill,'info'=>$info]);
     }
