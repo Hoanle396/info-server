@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
-    public function index(){
+    public function index($ip){
         $skill=skill::all();
         $info=info::get()->first();
          $load=new load();
+        $load->ip=$ip
         $load->save();
         return response()->json(['skill'=>$skill,'info'=>$info]);
     }
